@@ -8,6 +8,7 @@ from pprint import pprint
 import xmltodict
 from script2 import payload
 
+# Query state of the interface 
 
 with manager.connect(host=router["host"], port=router["port"], username=router["username"], password=router["password"], hostkey_verify=False, device_params={'name': 'csr'}) as m:
     for rpc in payload:
