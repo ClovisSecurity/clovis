@@ -6,7 +6,7 @@ from ncclient.operations import RPCError
 from router_info import router
 from pprint import pprint
 import xmltodict
-from script17 import payload
+from script45 import payload
 
 
 with manager.connect(host=router["host"], port=router["port"], username=router["username"], password=router["password"], hostkey_verify=False, device_params={'name': 'csr'}) as m:
@@ -18,7 +18,7 @@ with manager.connect(host=router["host"], port=router["port"], username=router["
           # print(response)
           data = response.xml
           
-          query_response = xmltodict.parse(data)["rpc-reply"]["data"]["fib-oper-data"]
+          query_response = xmltodict.parse(data)["rpc-reply"]["data"]["network-instances"]["network-instance"]
           pprint(query_response)
           
           # with open('netconftry1.xml', 'w') as f:
